@@ -13,9 +13,11 @@ Graph* create_graph(int n_vertices){
     Graph* graph = (Graph*)malloc(sizeof(Graph));
     graph->num_vertices = n_vertices;
     graph->adj_lists = (Node**)malloc(n_vertices * sizeof(Node*));
+    graph->visited = (int*)malloc(n_vertices * sizeof(int));
     
     for (int i = 0; i < n_vertices; i++) {
         graph->adj_lists[i] = NULL;
+        graph->visited[i] = 0;
     }
     return graph;
 }

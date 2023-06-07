@@ -14,5 +14,16 @@ int main() {
 
     display_graph(graph);
 
+    printf("\nDepth-First Search (DFS):\n");
+    dfs(graph, 0);
+
+    // Reset the visited array for breadth first search
+    for (int i = 0; i < n_vertices; i++) {
+        graph->visited[i] = 0;
+    }
+
+    printf("\nBreadth-First Search (BFS):\n");
+    bfs(graph, 0);
+
     return 0;
 }
