@@ -5,6 +5,7 @@
 #define MAX_SIZE 100
 
 void print_array(int array[], int n);
+void merge_sort_main();
 
 int main() {
     FILE *file;
@@ -33,14 +34,21 @@ int main() {
 
     printf("Unsorted array:\t");
     print_array(array, size);
-    printf("\n");
     bubble_sort(array, size);
-    printf("Sorted array:\t");
+    printf("Sorted array using bubble sort:\t");
     print_array(array, size);
-    printf("\n");
-
     free(array);
 
+    // merge_sort_main();
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Unsorted array: ");    
+    print_array(arr, n);
+    merge_sort(arr, n);
+    printf("Sorted array using merge sort: ");
+
+    print_array(arr, n);
+    printf("\n");
     return 0;
 }
 
@@ -48,4 +56,5 @@ void print_array(int array[], int n) {
     for (int i =0; i < n; i++) {
         printf("%d ", array[i]);
     }
+    printf("\n");
 }
