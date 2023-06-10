@@ -5,7 +5,6 @@
 #define MAX_SIZE 100
 
 void print_array(int array[], int n);
-void merge_sort_main();
 
 int main() {
     FILE *file;
