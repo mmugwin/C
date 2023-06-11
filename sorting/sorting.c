@@ -18,10 +18,36 @@ void bubble_sort(int arr[], int n)
     }   
 }
 
-// // quick sort
-// void swap(int* a, int* b);
-// int partition(int arr[], int low, int high);
-// void quick_sort(int arr[], int low, int high);
+// quick sort
+void swap(int* a, int* b){
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+int partition(int arr[], int low, int high){
+    int pivot = arr[high];      // choose the last element as the pivot
+    int i = low - 1;            // index of the smaller element
+
+    for (int j = low; j <= high - 1; j++) {
+        // if the current element is smaller than or equal to the pivot
+        if (arr[j] <= pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }    
+    }
+    swap(&arr[i+1], &arr[high]);
+    return (i+1);
+}
+
+void quick_sort(int arr[], int low, int high){
+    if (low < high) {
+        int partition_idx = partition(arr, low, high); // partitioning index
+        quick_sort(arr, low, partition_idx - 1);
+        quick_sort(arr, partition_idx + 1, high);
+    }
+}
+
 
 // merge sort
 void merge(int arr[], int left[], int left_size, int right[], int right_size) {
