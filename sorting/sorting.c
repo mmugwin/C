@@ -49,6 +49,7 @@ void quick_sort(int arr[], int low, int high){
 }
 
 
+
 // merge sort
 void merge(int arr[], int left[], int left_size, int right[], int right_size) {
     int i = 0, j = 0, k = 0;

@@ -34,13 +34,15 @@ int main() {
     printf("Unsorted array\t(bubble sort):\t");
     print_array(array, size);
     bubble_sort(array, size);
+
     printf("Sorted array\t(bubble sort):\t");
     print_array(array, size);
     free(array);
 
-    // merge_sort_main();
+
     int arr[] = {64, 34, 25, 12, 22, 11, 90};
     int n = sizeof(arr) / sizeof(arr[0]);
+
     printf("Unsorted array\t(merge sort):\t");    
     print_array(arr, n);
     merge_sort(arr, n);
@@ -48,8 +50,6 @@ int main() {
 
     print_array(arr, n);
 
-
-    // merge_sort_main();
     int arr2[] = {6, 45, 53, 12, 22, 101, 90, -20, 129, 244, 0, -13};
     n = sizeof(arr2) / sizeof(arr2[0]);
     printf("Unsorted array\t(quick sort):\t");    
