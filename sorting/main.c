@@ -35,6 +35,7 @@ int main() {
     print_array(array, size);
     bubble_sort(array, size);
     printf("Sorted array\t(bubble sort):\t");
+
     print_array(array, size);
     free(array);
 
@@ -58,6 +59,7 @@ int main() {
     printf("Sorted array\t(quick sort):\t");
 
     print_array(arr2, n);
+
 
     return 0;
 }
