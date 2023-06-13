@@ -14,19 +14,24 @@ int main() {
     insert_at_head(&head, 569);
     insert_at_tail(&head, 0);
 
-    printf("Linked List: ");
+    printf("Linked List: \n");
     display_list(head);
 
     head = reverse_list(head);
-    printf("Reversed List: ");
+    printf("Reversed List: \n");
     display_list(head);
 
     head = delete_node(head, 4);
-    printf("List after deleting the 4th node: ");
+    printf("List after deleting the 4th node: \n");
+    display_list(head);
+
+    int n = 2;      // remove the second node from the end
+    head = remove_nth_from_end(head, n);
+    printf("Modified Linked List after deleting 2nd node from end: \n");
     display_list(head);
 
     delete_list(&head);
-    printf("List after deleting: ");
+    printf("List after deleting: \n");
     display_list(head);
 
     return 0;
