@@ -109,3 +109,28 @@ struct Node* reverse_list(struct Node* head) {
     head = prev;
     return head;
 }
+
+struct Node* remove_nth_from_end(struct Node* head, int n) {
+    struct Node* tmp = (struct Node*)malloc(sizeof(struct Node));
+    tmp->next = head;
+
+    struct Node* fast = tmp;
+    struct Node* slow = tmp;
+
+    for (int i = 0; i <= n; i++) {
+        if (fast == NULL) {
+            return head;
+        }
+        fast = fast->next;
+    }
+
+    while(fast != NULL) {
+        fast = fast->next;
+        slow = slow->next;
+    }
+
+    struct Node* to_remove = slow->next;
+    slow->next = slow->next->next;
+    free(to_remove);
+    return tmp->next;
+}
