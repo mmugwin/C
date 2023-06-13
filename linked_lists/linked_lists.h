@@ -14,5 +14,6 @@ void insert_at_head(struct Node** head, int data);
 void insert_at_tail(struct Node** head, int data);
 struct Node* reverse_list(struct Node* head);
 struct Node* delete_node(struct Node* head, int position);
+struct Node* remove_nth_from_end(struct Node* head, int n);
 
 #endif
